@@ -1,0 +1,42 @@
+{
+  "name": "cryptoswiftjs",
+  "version": "1.0.0",
+  "description": "A secure AES encryption/decryption library with Argon2",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "mkdir dist && xcopy /Y src\\index.js dist\\",
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Suvoji01/cryptoswiftjs.git"
+  },
+  "keywords": [
+    "encryption",
+    "decryption",
+    "crypto",
+    "aes",
+    "security",
+    "argon2"
+  ],
+  "author": "Suvojit Modak",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src",
+    "test",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "argon2": "^0.41.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
+}
