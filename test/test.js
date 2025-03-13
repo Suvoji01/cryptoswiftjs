@@ -1,13 +1,13 @@
-// test/test.js
-import { encrypt, decrypt } from '../src/index.js';
-
-const message = "Hello, Secure World!";
-const secretKey = "mySuperStrongPassword123";
-
+const { encrypt, decrypt } = require('../src/index.js');
+const password = "mySecretPassword";
+const data = "Hello, World!";
 (async () => {
-    const encrypted = await encrypt(message, secretKey);
+  try {
+    const encrypted = await encrypt(data, password);
     console.log("Encrypted:", encrypted);
-
-    const decrypted = await decrypt(encrypted, secretKey);
+    const decrypted = await decrypt(encrypted, password);
     console.log("Decrypted:", decrypted);
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
 })();

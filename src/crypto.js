@@ -1,6 +1,6 @@
 // src/crypto.js
-import crypto from 'crypto';
-import argon2 from 'argon2';
+const crypto = require('crypto');
+const argon2 = require('argon2');
 
 const ALGORITHM = 'aes-256-gcm';
 const IV_LENGTH = 12;  // Recommended IV size
@@ -24,7 +24,7 @@ async function generateKey(password, salt) {
 /**
  * Encrypts a given text using AES-256-GCM with Argon2-derived key.
  */
-export async function encrypt(text, password) {
+module.exports.encrypt = async function (text, password) {
     const salt = crypto.randomBytes(SALT_LENGTH);
     const key = await generateKey(password, salt);
     const iv = crypto.randomBytes(IV_LENGTH);
@@ -36,12 +36,12 @@ export async function encrypt(text, password) {
     const authTag = cipher.getAuthTag();
 
     return `${salt.toString('hex')}:${iv.toString('hex')}:${encrypted}:${authTag.toString('hex')}`;
-}
+};
 
 /**
  * Decrypts an encrypted string using AES-256-GCM with Argon2 key derivation.
  */
-export async function decrypt(encryptedData, password) {
+module.exports.decrypt = async function (encryptedData, password) {
     try {
         const [saltHex, ivHex, encryptedText, authTagHex] = encryptedData.split(':');
 
@@ -60,4 +60,4 @@ export async function decrypt(encryptedData, password) {
     } catch (error) {
         throw new Error('Decryption failed. Invalid key or corrupted data.');
     }
-}
+};

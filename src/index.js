@@ -1,4 +1,6 @@
 // src/index.js
-import { encrypt, decrypt } from './crypto.js';
-
-export { encrypt, decrypt };
+const cryptoModule = require('./crypto');
+module.exports = {
+    encrypt: cryptoModule.encrypt,
+    decrypt: cryptoModule.decrypt
+};

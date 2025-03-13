@@ -11,7 +11,7 @@ A secure AES-256-GCM encryption/decryption library using **Argon2 password hashi
 
 ---
 
-## 📦 Installation
+## 📚 Installation
 
 Install via npm:
 
@@ -31,7 +31,7 @@ yarn add cryptoswiftjs
 
 ### **Encrypt Data**
 ```js
-import { encrypt } from 'cryptoswiftjs';
+const { encrypt } = require('cryptoswiftjs');
 
 const message = "Hello, Secure World!";
 const password = "mySuperStrongPassword123";
@@ -44,7 +44,7 @@ const password = "mySuperStrongPassword123";
 
 ### **Decrypt Data**
 ```js
-import { decrypt } from 'cryptoswiftjs';
+const { decrypt } = require('cryptoswiftjs');
 
 (async () => {
     const encryptedData = "your_encrypted_data_here";
@@ -55,7 +55,7 @@ import { decrypt } from 'cryptoswiftjs';
 
 ---
 
-## 🛠 How It Works
+## 🛠️ How It Works
 
 1. **Password-Based Key Derivation**  
    - Uses **Argon2id** to generate a 32-byte key from the password.  
@@ -80,7 +80,7 @@ import { decrypt } from 'cryptoswiftjs';
 
 ---
 
-## 📄 API Reference
+## 📝 API Reference
 
 ### `encrypt(text: string, password: string) => Promise<string>`
 Encrypts the given text using **AES-256-GCM** and returns an encrypted string.
@@ -90,7 +90,7 @@ Decrypts the encrypted string back to its original plaintext.
 
 ---
 
-## 🛠 Issues & Enhancements
+## 🛠️ Issues & Enhancements
 
 For bug reports or feature requests, visit:  
 🔗 **[GitHub Issues](https://github.com/Suvoji01/cryptoswiftjs/issues)**
@@ -113,6 +113,6 @@ Licensed under the **MIT License**.
 
 ---
 
-💡 **Made with ❤️ by [Suvojit Modak](https://github.com/Suvoji01/)**  
+💡 **Made with ❤️ by [Suvojit Modak](https://github.com/Suvoji01/)**
 
 ---
